@@ -14,8 +14,8 @@ OPENID_PROVIDERS = [
 # 数据库
 basedir = os.path.abspath(os.path.dirname(__file__))
 # 数据库路径
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
 # SQLAlchemy - migrate数据文件存储位置
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+SQLALCHEMY_COMMIT_ON_TEARDOWN = True

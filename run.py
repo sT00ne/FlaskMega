@@ -1,3 +1,8 @@
 from app import app
+from flask_script import Manager, Server
 
-app.run(debug=True)
+manager = Manager(app)
+manager.add_command("runserver", Server(use_debugger=True))
+
+if __name__ == '__main__':
+    manager.run()

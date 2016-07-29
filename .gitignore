@@ -4,5 +4,8 @@
 .idea/vcs.xml
 .idea/modules.xml
 .idea/misc.xml
-app/__pycache__
+app/__pycache__/*
 flask/*
+migrations/__pychache__/*
+__pycache__\*
+*.pyc

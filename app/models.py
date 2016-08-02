@@ -4,31 +4,12 @@ from app import db
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
-    nickname = db.Column(db.String(64), index=True, unique=True)
+    username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
-    is_authenticated = True
-    is_active = True
-    is_anonymous = False
-
-    # 是否认证
-    # def is_authenticated(self):
-    #     return True
-    #
-    # # 账号是否被禁止
-    # def is_active(self):
-    #     return True
-    #
-    # # 是否是伪造的用户
-    # def is_anonymous(self):
-    #     return False
-    #
-    # 返回用户的id
-    def get_id(self):
-        return str(self.id)  # python 3
 
     def __repr__(self):
-        return '<User %r>' % self.nickname
+        return '<User %r>' % self.username
 
 
 class Post(db.Model):
